@@ -1,0 +1,29 @@
+# ---- Secrets ----
+.env
+.env.*
+*.env
+secrets.json
+config.json
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- Virtual env ----
+venv/
+.venv/
+
+# ---- IDE ----
+.vscode/
+.idea/
+.DS_Store
+
+# ---- Logs / outputs ----
+*.log
+logs/
+outputs/
+results/
+runs/
