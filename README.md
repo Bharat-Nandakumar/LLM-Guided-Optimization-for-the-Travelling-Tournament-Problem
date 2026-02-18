@@ -58,9 +58,9 @@ This ensures feasibility while leveraging LLM reasoning.
 
 We minimize total travel distance:
 
-\[
-f(S) = \sum_{i=1}^{n} \sum_{(h,a) \in S_i} D_{ha}
-\]
+<p align="center">
+  <img src="pictures/formula.png" width="300">
+</p>
 
 Where:
 
@@ -73,7 +73,11 @@ Constraint violations are penalized in the scoring function.
 ---
 
 ## 🏗 Architecture
+The following diagram illustrates the LLM-guided optimization framework:
 
+<p align="center">
+  <img src="pictures/arch.png" width="500">
+</p>
 
 
 
@@ -92,11 +96,11 @@ Core modules:
 
 The LLM is restricted to the following moves:
 
-- `swap_games_between_rounds`
-- `flip_home_away`
-- `rotate_rounds`
-- `rotate_team_labels`
-- `transpose_home_away_for_team`
+- `swap_games_between_rounds` - Exchanges two games from different rounds to potentially reduce long travel sequences while preserving DRR structure.
+- `flip_home_away` - Exchanges two games from different rounds to potentially reduce long travel sequences while preserving DRR structure.
+- `rotate_rounds` - Cyclically shifts all rounds by k positions to redistribute travel patterns across the season.
+- `rotate_team_labels` - Renumbers team identifiers cyclically so that structural symmetry can produce a new travel configuration.
+- `transpose_home_away_for_team` - Renumbers team identifiers cyclically so that structural symmetry can produce a new travel configuration.
 
 All moves preserve Double Round Robin structure.
 
@@ -137,7 +141,7 @@ The LLM was provided with:
 
 The model was asked to directly modify the schedule to improve feasibility and reduce total travel.
 
-# Issues Observed
+### Issues Observed
 
 - Frequent violation of DRR structure
 
@@ -169,6 +173,11 @@ Instead of allowing the LLM to modify schedules freely:
 ## Results
 
 ### 📌 Results of Initial Fully Generative Approach
+
+<p align="center">
+  <img src="pictures/table_1.png" width="500">
+</p>
+
 1. Travel distances were significantly higher than RobinX benchmarks.
 
 2. Frequent CA3 violations occurred.
@@ -181,6 +190,10 @@ This confirmed that unconstrained LLM schedule modification is unreliable for st
 
 
 ### 📌 Results of Final Move-Based LLM Framework
+
+<p align="center">
+  <img src="pictures/table_2.png" width="600">
+</p>
 
 1. Significant improvement over initial approach.
 
