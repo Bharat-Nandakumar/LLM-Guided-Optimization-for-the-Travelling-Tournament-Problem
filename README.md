@@ -1,5 +1,13 @@
 # LLM-Guided Optimization for the Travelling Tournament Problem (TTP)
 
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![LLM](https://img.shields.io/badge/LLM-GPT--5.1-green)
+![Optimization](https://img.shields.io/badge/Domain-Combinatorial%20Optimization-orange)
+![Problem](https://img.shields.io/badge/Problem-TTP-red)
+![Status](https://img.shields.io/badge/Status-Research%20Project-purple)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+
 LLM-guided heuristic optimization framework for the Travelling Tournament Problem (TTP) with constraint-aware move selection and benchmark evaluation.
 
 ---
@@ -216,3 +224,16 @@ This confirmed that unconstrained LLM schedule modification is unreliable for st
 4. Performance improves with stronger models (GPT-5.1 vs GPT-4o-mini).
 
 5. Still above RobinX ideal scores, but substantially closer than initial approach.
+
+
+## 📄 License
+
+MIT License
+
+## 👤 Author
+Bharat Nandakumar
+M.S. Computer Science
+Penn State University – Harrisburg
+
+
+
